@@ -1,0 +1,34 @@
+public class ArmstrongNumber {
+
+    // Function to calculate the power of a digit
+    public static int power(int digit, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return digit * power(digit, n - 1);
+    }
+
+    // Recursive function to calculate the sum of the digits raised to the power of the number of digits
+    public static int sumOfPowers(int num, int n) {
+        if (num == 0) {
+            return 0;
+        }
+        int digit = num % 10;
+        return power(digit, n) + sumOfPowers(num / 10, n);
+    }
+
+    // Function to check if a number is an Armstrong number
+    public static boolean isArmstrong(int num) {
+        int n = Integer.toString(num).length();
+        return num == sumOfPowers(num, n);
+    }
+
+    public static void main(String[] args) {
+        int number = 153; // Example number
+        if (isArmstrong(number)) {
+            System.out.println(number + " is an Armstrong number.");
+        } else {
+            System.out.println(number + " is not an Armstrong number.");
+        }
+    }
+}
