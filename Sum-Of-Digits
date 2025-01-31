@@ -1,0 +1,15 @@
+public class Main{
+   public static int digitSum(int n){
+       
+       
+       if(n>=0 && n<=9){
+           return n;
+       }
+     
+       return (n%10)+  digitSum(n/10);
+   }
+   public static void main(String[] args){
+       System.out.println("Sum of the Digits are:"+digitSum(140));
+   }
+    
+}
