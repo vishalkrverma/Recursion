@@ -1,0 +1,16 @@
+public class Main{
+    static int calculateGCD(int m,int n){
+        if(m==0 || n==0){
+            return -1;
+        }
+        
+        if(n%m==0){
+            return m;
+        }
+        return calculateGCD(n%m,m);
+    }
+    
+    public static void main(String[] args){
+        System.out.print(calculateGCD(6,12));
+    }
+}
