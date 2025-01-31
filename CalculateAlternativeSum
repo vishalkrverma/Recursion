@@ -1,0 +1,17 @@
+public class Main{
+    static int calculateAlternativeSum(int n,int sum){
+        if(n==0) return sum;
+        
+        if(n%2==0){
+            sum-=n;
+        }
+        else{
+            sum+=n;
+        }
+        return calculateAlternativeSum(n-1,sum);
+    }
+    
+    public static void main(String[] args){
+        System.out.print(calculateAlternativeSum(5,0));
+    }
+}
