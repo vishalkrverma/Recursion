@@ -1,0 +1,17 @@
+public class CalculateLCM{
+    static int calculateGCD(int m,int n){
+        if(m==0 || n==0){
+            return -1;
+        }
+        
+        if(n%m==0){
+            return m;
+        }
+        return calculateGCD(n%m,m);
+    }
+    
+    public static void main(String[] args){
+        int lcm=(6*12)/calculateGCD(6,12);
+        System.out.print("Print LCM:"+lcm);
+    }
+}
