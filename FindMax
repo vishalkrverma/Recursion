@@ -1,0 +1,16 @@
+public class Main{
+    static int  findMax(int arr[],int max,int end){
+        int n=arr.length;
+        if(arr.length==1) return arr[0];
+        
+        if(end==n){
+            return max;
+        }
+        return findMax(arr,Math.max(arr[end],max),end+1);
+    }
+    
+    public static void main(String[] args){
+       int[] arr={1,4,6,74,2,6,8};
+        System.out.print(findMax(arr,Integer.MIN_VALUE,0));
+    }
+}
